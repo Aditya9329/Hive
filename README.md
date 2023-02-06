@@ -1,5 +1,6 @@
 # create table for sales data
 suppose you have a table and table have some data in it,and someone wants you to drop the data but making sure that there must be a backup of it.
+```bash
 table name is sales_data OK.
 create table sales_data
 (item string,
@@ -7,16 +8,22 @@ total_sales int
 )
 row format delimited
 fields terminated by ',';
+```
 
 
 # Load data into the hdfs of table
+```bash
 load data local inpath 'file:///config/workspace/sales_data_raw.csv' into table sales_data;
 select * from sales_data;
+```
 
 # create a backup table
+```bash
 create table sales_data_bkup as select * from sales_data;
+```
 
 # Table as CSV Serde
+```bash
 create table csv_table
     (
     name string,
@@ -30,6 +37,7 @@ create table csv_table
     )
     stored as textfile
     tblproperties ("skip.header.line.count" = "1");
+```
 ------ load data local inpath 'file:///config/workspace/csv_file.csv' into table csv_table;--------
 
 
