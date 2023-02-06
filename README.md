@@ -31,3 +31,19 @@ create table csv_table
     stored as textfile
     tblproperties ("skip.header.line.count" = "1");
 ------ load data local inpath 'file:///config/workspace/csv_file.csv' into table csv_table;--------
+
+
+# JSON Serde 
+
+create table json_table
+    (
+    name string,
+    id int,
+    skills array<string>
+    )
+    row format serde 'org.apache.hive.hcatalog.data.JsonSerDe'
+    stored as textfile;
+ 
+    load data local inpath 'file:///config/workspace/json_file.json' into table json_table;
+    
+    select skills[0] as primary_skills from json_table;
