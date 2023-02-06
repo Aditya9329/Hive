@@ -63,6 +63,6 @@ create table json_table
 # Jar
   
     
-# How to add file in other format like parquet ,ORC(Optimize Row Columnar),etc.
+# How to add file in other format like parquet ,ORC(Optimize Row Columnar),etc in HDFS.
     - ORC file format works well in Hive.
     - PARQUET file format works well with Spark.
