@@ -67,6 +67,7 @@ create table json_table
     - ORC file format works well in Hive.
     - PARQUET file format works well with Spark.
 # InterviewQuestion
-    - I loaded the file by mentioning as stored as parquet it load with no error in HDFS but at the time of retrival itis throwing an error while running cmd as
+    -Ques1. I loaded the file by mentioning as stored as parquet it load with no error in HDFS but at the time of retrival itis throwing an error while running cmd as
     "select * from parquest_table;" why error.
-    - 
+    - Ques2. What is schema on read?
+    - Ques3. What is schema on write?
