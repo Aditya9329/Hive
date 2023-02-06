@@ -55,3 +55,12 @@ create table json_table
     load data local inpath 'file:///config/workspace/json_file.json' into table json_table;
     
     select skills[0] as primary_skills from json_table;
+    
+    
+    
+    
+    
+# Jar
+  
+    
+#
