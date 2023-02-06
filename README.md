@@ -63,4 +63,4 @@ create table json_table
 # Jar
   
     
-# How to add file in other format like parquet.
+# How to add file in other format like parquet ,ORC(Optimize Row Columnar),etc.
