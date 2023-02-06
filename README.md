@@ -16,7 +16,7 @@ select * from sales_data;
 # create a backup table
 create table sales_data_bkup as select * from sales_data;
 
-# create table by metioning some properties
+# Table as CSV Serde
 create table csv_table
     (
     name string,
