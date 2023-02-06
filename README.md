@@ -66,3 +66,7 @@ create table json_table
 # How to add file in other format like parquet ,ORC(Optimize Row Columnar),etc in HDFS.
     - ORC file format works well in Hive.
     - PARQUET file format works well with Spark.
+# InterviewQuestion
+    - I loaded the file by mentioning as stored as parquet it load with no error in HDFS but at the time of retrival itis throwing an error while running cmd as
+    "select * from parquest_table;" why error.
+    - 
