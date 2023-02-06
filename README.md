@@ -13,5 +13,7 @@ fields terminated by ',';
 load data local inpath 'file:///config/workspace/sales_data_raw.csv' into table sales_data;
 select * from sales_data;
 
+# create a backup table
+create table sales_data_bkup as select * from sales_data;
 
 
