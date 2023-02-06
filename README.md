@@ -70,6 +70,15 @@ create table json_table
     Steps to store data a parquet file format.
      - store data a csv then
      - from csv store as parquet
+# Create table for parquet
+    ```bash
+    (
+    item string,
+    total_sales int
+    )
+    stored as parquet;
+    - cmd:-from sales insert overwrite table data_as_parquet_file select *;
+    ```
 # InterviewQuestion
     -Ques1. I loaded the file by mentioning as stored as parquet it load with no error in HDFS but at the time of retrival itis throwing an error while running cmd as
     "select * from parquest_table;" why error.
