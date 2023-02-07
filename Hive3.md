@@ -10,3 +10,6 @@ load data local inpath 'file:///home/hadoop/sales_order_data.csv' into table sal
 create table sales_order_data_orc ( ORDERNUMBER int, QUANTITYORDERED int, PRICEEACH float, ORDERLINENUMBER int, SALES float, STATUS string, QTR_ID int, MONTH_ID int, YEAR_ID int, PRODUCTLINE string, MSRP int, PRODUCTCODE string, PHONE string, CITY string, STATE string, POSTALCODE string, COUNTRY string, TERRITORY string, CONTACTLASTNAME string, CONTACTFIRSTNAME string, DEALSIZE string ) stored as orc;
 
 from sales_order_data_csv_v1 insert overwrite table sales_order_data_orc select *;
+
+##  Run a query to check map-reduce activity
+select year_id, sum(sales) as total_sales from sales_order_data_orc group by year_id;
