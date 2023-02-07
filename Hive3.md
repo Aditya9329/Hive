@@ -26,3 +26,7 @@ create table sales_static_part
     )
     partitioned by (COUNTRY string);
    ```
+   load data in static partitioning
+   ```bash
+   insert overwrite table sales_data_static_part partition(country = 'USA') select ordernumber,quantityordered,sales,year_id from sales_ord er_data_orc where country = 'USA';
+   ```
