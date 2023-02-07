@@ -13,3 +13,16 @@ from sales_order_data_csv_v1 insert overwrite table sales_order_data_orc select 
 
 ##  Run a query to check map-reduce activity
 select year_id, sum(sales) as total_sales from sales_order_data_orc group by year_id;
+
+## create a partition table
+
+```bash
+create table sales_static_part
+    (
+    ORDERNUMBER int,
+    QUANTITYORDERED int,
+    SALES float,
+    YEARID int
+    )
+    partitioned by (COUNTRY string);
+   ```
