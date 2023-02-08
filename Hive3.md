@@ -47,4 +47,17 @@ insert overwrite table sales_data_dynamic_part partition(country)
 select ordernumber,quantityordered,sales,year_id,country from sales_or der_data_orc;
 ) partitioned by (COUNTRY string);
 ```
+
+## multilevel partition
+```bash
+create table sales_data_dynamic_multilevel_part_v1
+( ORDERNUMBER int,
+QUANTITYORDERED int,
+SALES float
+) partitioned by (COUNTRY string, YEAR_ID int);
+```
+
+## load data in multilevel partitions
+```bash
+insert overwrite table sales_data_dynamic_multilevel_part_v1 partition(country,year_id) select ordernumber,quantityordered,sales,country ,year_id from sales_order_data_orc;
 ```
