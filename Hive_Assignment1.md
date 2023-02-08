@@ -6,31 +6,30 @@ data download done
  ```
 
 3. Create a internal hive table "sales_order_csv" which will store csv data sales_order_csv .. make sure to skip header row while creating table
-4. ```bash
-5.   create table sales_order_csv( 
-6.   ORDERNUMBER int,
-7.   QUANTITYORDERED int,
-8.   PRICEEACH float,
-9.   ORDERLINENUMBER int, 
-10.  SALES float, 
-11.  STATUS string, 
-12.  QTR_ID int, 
-13.  MONTH_ID int, 
-14.  YEAR_ID int, 
-15.  PRODUCTLINE string, 
-16.  MSRP int, 
-17.  PRODUCTCODE string, 
-18.  PHONE string, 
-19.  CITY string, 
-20.  STATE string, 
-21.  POSTALCODE string, 
-22.  COUNTRY string, TERRITORY string,
-23.  CONTACTLASTNAME string, 
-24.  CONTACTFIRSTNAME string, 
-25.  DEALSIZE string 
-26.  ) 
-27.  row format delimited
-28.  fields terminated by ',' 
-29.  tblproperties("skip.header.line.count"="1") ;
-30.  ```
-31.  
+```bash
+   create table sales_order_csv( 
+  ORDERNUMBER int,
+  QUANTITYORDERED int,
+  PRICEEACH float,
+  ORDERLINENUMBER int, 
+ SALES float, 
+ STATUS string, 
+ QTR_ID int, 
+ MONTH_ID int, 
+ YEAR_ID int, 
+ PRODUCTLINE string, 
+ MSRP int, 
+ PRODUCTCODE string, 
+ PHONE string, 
+CITY string, 
+ STATE string, 
+ POSTALCODE string, 
+ COUNTRY string, TERRITORY string,
+ CONTACTLASTNAME string, 
+ CONTACTFIRSTNAME string, 
+ DEALSIZE string 
+ ) 
+row format delimited
+fields terminated by ',' 
+tblproperties("skip.header.line.count"="1") ;
+```
