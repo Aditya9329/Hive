@@ -43,6 +43,10 @@ data download done
 ```bash
 load data inpath '/data_dir/sales_order_data.csv' into table sales_order_csv;
 ```
+5. Create an internal hive table which will store data in ORC format "sales_order_orc"
 
+```bash
+from sales_order_csv insert overwrite table sales_order_orc select *;
+```
 
 
