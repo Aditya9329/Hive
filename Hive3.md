@@ -30,3 +30,20 @@ create table sales_static_part
    ```bash
    insert overwrite table sales_data_static_part partition(country = 'USA') select ordernumber,quantityordered,sales,year_id from sales_ord er_data_orc where country = 'USA';
    ```
+## set this property for dynamic partioning
+```bash
+set hive.exec.dynamic.partition.mode=nonstrict;
+
+hive> create table sales_data_dynamic_part
+( ORDERNUMBER int,
+QUANTITYORDERED int,
+SALES float,
+YEAR_ID int
+```
+## load data in dynamic partition table
+```bash
+insert overwrite table sales_data_dynamic_part partition(country) 
+select ordernumber,quantityordered,sales,year_id,country from sales_or der_data_orc;
+) partitioned by (COUNTRY string);
+```
+```
