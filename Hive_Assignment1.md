@@ -46,6 +46,37 @@ load data inpath '/data_dir/sales_order_data.csv' into table sales_order_csv;
 5. Create an internal hive table which will store data in ORC format "sales_order_orc"
 
 ```bash
+
+create table sales_order_data_orc 
+(
+ORDERNUMBER int,
+QUANTITYORDERED int, 
+PRICEEACH float, 
+ORDERLINENUMBER int, 
+SALES float, 
+STATUS string, 
+QTR_ID int, 
+MONTH_ID int, 
+YEAR_ID int, 
+PRODUCTLINE string, 
+MSRP int, 
+PRODUCTCODE string, 
+PHONE string, 
+CITY string, 
+STATE string, 
+POSTALCODE string, 
+COUNTRY string, 
+TERRITORY string, 
+CONTACTLASTNAME string, 
+CONTACTFIRSTNAME string, 
+DEALSIZE string 
+) 
+stored as orc;
+```
+
+6. Load data from "sales_order_csv" into "sales_order_orc"
+
+```bash
 from sales_order_csv insert overwrite table sales_order_orc select *;
 ```
 
