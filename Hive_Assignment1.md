@@ -1,0 +1,6 @@
+# Hive Assignment
+
+data download done
+```bash
+ https://github.com/shashank-mishra219/Hive-Class/blob/main/sales_order_data.csv
+ ```
