@@ -4,6 +4,12 @@ data download done
 ```bash
  https://github.com/shashank-mishra219/Hive-Class/blob/main/sales_order_data.csv
  ```
+ 
+ 
+2. Store raw data into hdfs location
+ ```bash
+  hadoop fs -put sales_order_data.csv /data_dir
+  ```
 
 3. Create a internal hive table "sales_order_csv" which will store csv data sales_order_csv .. make sure to skip header row while creating table
 ```bash
@@ -33,3 +39,6 @@ row format delimited
 fields terminated by ',' 
 tblproperties("skip.header.line.count"="1") ;
 ```
+
+
+
