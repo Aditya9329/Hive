@@ -81,3 +81,31 @@ from sales_order_csv insert overwrite table sales_order_orc select *;
 ```
 
 
+a. Calculatye total sales per year
+```bash
+```
+
+b. Find a product for which maximum orders were placed
+```bash
+```
+
+c. Calculate the total sales for each quarter
+```bash
+```
+
+d. In which quarter sales was minimum
+```bash
+```
+
+e. In which country sales was maximum and in which country sales was minimum
+```bash
+```
+
+f. Calculate quartelry sales for each city
+```bash
+```
+
+h. Find a month for each year in which maximum number of quantities were sold
+```bash
+```
+
