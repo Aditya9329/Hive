@@ -39,6 +39,7 @@ hive> create table sales_data_dynamic_part
 QUANTITYORDERED int,
 SALES float,
 YEAR_ID int
+) partitioned by (COUNTRY string);
 ```
 ## load data in dynamic partition table
 ```bash
