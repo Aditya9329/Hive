@@ -7,9 +7,9 @@ data download done
 
 3. Create a internal hive table "sales_order_csv" which will store csv data sales_order_csv .. make sure to skip header row while creating table
 4. ```bash
-5. create table sales_order_csv( 
-6.  ORDERNUMBER int,
-7.  QUANTITYORDERED int,
+5.   create table sales_order_csv( 
+6.   ORDERNUMBER int,
+7.   QUANTITYORDERED int,
 8.   PRICEEACH float,
 9.   ORDERLINENUMBER int, 
 10.  SALES float, 
