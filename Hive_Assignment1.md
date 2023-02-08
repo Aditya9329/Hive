@@ -81,12 +81,14 @@ from sales_order_csv insert overwrite table sales_order_orc select *;
 ```
 
 
-a. Calculatye total sales per year
+a. Calculate total sales per year
 ```bash
+select year_id,sum(sales) as total_sales from sales_order_orc group by year_id;
 ```
 
 b. Find a product for which maximum orders were placed
 ```bash
+select productline,sum(quantityordered) as max_sale from sales_order_orc group by productline order by max_sale;
 ```
 
 c. Calculate the total sales for each quarter
