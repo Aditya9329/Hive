@@ -29,3 +29,28 @@ mode requires at least one static partition column. How will you remove this err
 SET hive.exec.dynamic.partition = true;
 SET hive.exec.dynamic.partition.mode = nonstrict;
 ```
+
+Suppose, I have a lot of small CSV files present in the input directory in HDFS and I want to create a single Hive table corresponding to these files. The data in these files are in the format: {id, name, e-mail, country}. Now, as we know, Hadoop performance degrades when we use lots of small files.
+So, how will you solve this problem where we want to create a single Hive table for lots of small files without degrading the performance of the system?
+
+
+
+```bash
+
+Create a simple table:
+CREATE TABLE table_to_use (id INT, name STRING, e-mail STRING, country STRING)
+
+ROW FORMAT FIELDS DELIMITED TERMINATED BY ‘,’
+STORED AS TEXTFILE;
+
+Load the data into table_to_use:
+load data inpath ‘/input’ into table table_to_use;
+
+create a final table
+create table full_data (id int, name string, e-mail string, country string)
+
+ROW FORMAT FIELDS DELIMITED TERMINATED BY ‘,’ stored as full_data;
+
+
+insert overwrite table full_data select * from simple_table;
+```
