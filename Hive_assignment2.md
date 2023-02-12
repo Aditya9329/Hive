@@ -22,3 +22,10 @@ How can you add a new partition for the month December in the above partitioned 
 ```bash
 ALTER TABLE table_name ADD PARTITION (month=’December’) LOCATION  ‘/table_name’;
 ```
+
+I am inserting data into a table based on partitions dynamically. But, I received an error – FAILED ERROR IN SEMANTIC ANALYSIS: Dynamic partition strict 
+mode requires at least one static partition column. How will you remove this error?
+```bash
+SET hive.exec.dynamic.partition = true;
+SET hive.exec.dynamic.partition.mode = nonstrict;
+```
