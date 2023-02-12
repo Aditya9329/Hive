@@ -30,6 +30,8 @@ SET hive.exec.dynamic.partition = true;
 SET hive.exec.dynamic.partition.mode = nonstrict;
 ```
 
+
+
 Suppose, I have a lot of small CSV files present in the input directory in HDFS and I want to create a single Hive table corresponding to these files. The data in these files are in the format: {id, name, e-mail, country}. Now, as we know, Hadoop performance degrades when we use lots of small files.
 So, how will you solve this problem where we want to create a single Hive table for lots of small files without degrading the performance of the system?
 
@@ -54,3 +56,43 @@ ROW FORMAT FIELDS DELIMITED TERMINATED BY ‘,’ stored as full_data;
 
 insert overwrite table full_data select * from simple_table;
 ```
+
+Hive pratical
+
+create table customers
+```bash
+    create table customers
+     (
+     id int
+     age int,
+     name string,
+     adress string,
+     salary int
+     )
+     ;
+  ```
+create table orders
+
+```bash 
+    create table orders
+    (
+    oid int,
+    o_te date,
+    customerid int,
+    amount int
+    );
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
