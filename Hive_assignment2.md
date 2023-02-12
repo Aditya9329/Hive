@@ -77,14 +77,34 @@ create table orders
     create table orders
     (
     oid int,
-    o_te date,
+    o_date date,
     customerid int,
     amount int
     );
 ```
 
 
+Now perform different joins operations on top of these tables
+(Inner JOIN, LEFT OUTER JOIN ,RIGHT OUTER JOIN ,FULL OUTER JOIN)
 
+# inner join
+```bash
+select * from customers inner join orders on customers.id = orders.o_id;
+```
+
+# left outer join
+```bash
+select * from customers left outer join orders on customers.id = orders.o_id;
+```
+# right outer join
+```bash
+select * from customers right outer join orders on customers.id = orders.o_id;
+```
+
+# full outer join
+```bash
+select * from customers full outer join orders on customers.id = orders.o_id;
+```
 
 
 
