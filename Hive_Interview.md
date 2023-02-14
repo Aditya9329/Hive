@@ -7,3 +7,4 @@ Partitioning is means dividing the data into the slices based on some column val
 #### what are the types of partitioning?
 #### What is static partitioning?
 #### What is dynamic partitioning?
+#### Is bucketing depended on bucketing?
