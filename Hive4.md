@@ -66,3 +66,6 @@ load data into the bucketed location table from table locations;
 ```
 
 
+# important types of join
+<img src="https://www.clairvoyant.ai/hubfs/img2.png" width="350" >
+
