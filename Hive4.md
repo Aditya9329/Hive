@@ -31,3 +31,28 @@ loading data into locations table
 ```bash
 load data local inpath'file:///config/workspace/locations.csv' into table locations;
 ```
+create bucket table for users
+```bash
+ create table bucketed_users
+    (
+    id int,
+    name string,
+    salary  int,
+    unit string
+    )
+    clustered by (id)
+    sorted by (id)
+    into 3 buckets;
+```
+load data into bucketeduser table from users table;
+```bash
+insert overwrite table bucketed_users select * from users;
+```
+
+
+
+
+
+
+
+
