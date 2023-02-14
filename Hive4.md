@@ -48,11 +48,21 @@ load data into bucketeduser table from users table;
 ```bash
 insert overwrite table bucketed_users select * from users;
 ```
+create bucketed locations table 
+```bash
+create table bucketed_locations
+    (
+    id int,
+    location string
+    )
+    clustered by(id)
+    sorted by (id)
+    into 3 buckets;
+  ```
 
-
-
-
-
-
+load data into the bucketed location table from table locations;
+```bash
+ insert overwrite table bucketed_locations select * from locations;
+```
 
 
