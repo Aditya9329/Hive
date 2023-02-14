@@ -67,6 +67,8 @@ load data into the bucketed location table from table locations;
 
 
 # important types of join
-# broadcast join
-<img src="https://www.clairvoyant.ai/hubfs/img2.png" width="350" >
+enable a property to perform join operation on hive
+```bash
+set hive.auto.convert.join=true;
+```
 
