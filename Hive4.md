@@ -71,4 +71,6 @@ enable a property to perform join operation on hive
 ```bash
 set hive.auto.convert.join=true;
 ```
-
+properties to set for bucket joins
+```bash
+set hive.optimize.bucketmapjoin=true;
