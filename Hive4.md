@@ -73,4 +73,20 @@ set hive.auto.convert.join=true;
 ```
 properties to set for bucket joins
 ```bash
-set hive.optimize.bucketmapjoin=true;
+set hive.optimize.bucketmapjoin=true; 
+SET hive.auto.convert.join=true;
+
+SELECT * FROM bucketed_users u INNER JOIN bucketed_locations l ON u.id = l.id;
+```
+
+properties for soretd map join
+```bash
+set hive.enforce.sortmergebucketmapjoin=false; 
+set hive.auto.convert.sortmerge.join=true;
+set hive.optimize.bucketmapjoin = true; 
+set hive.optimize.bucketmapjoin.sortedmerge = true;
+
+SET hive.auto.convert.join=false; SELECT * FROM buck_users u INNER JOIN buck_locations l ON u.id = l.id;
+
+No MapLocal Task to create hash table. Hadoop job information for Stage-1: number of mappers: 2; number of reducers: 0
+```
