@@ -164,7 +164,8 @@ select * from location order by city ;
 ```
 
 alter table operation 
-```alter table location rename to locations;
+```bash
+alter table location rename to locations;
  ```
 drop table operation
 ```bash
