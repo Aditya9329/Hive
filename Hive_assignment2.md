@@ -106,7 +106,101 @@ select * from customers right outer join orders on customers.id = orders.o_id;
 select * from customers full outer join orders on customers.id = orders.o_id;
 ```
 
+Download a data from the given location - 
+https://archive.ics.uci.edu/ml/machine-learning-databases/00360/
 
+1. Create a hive table as per given schema in your dataset 
+2. ```
+3. create table air(
+    d_date date,
+    d_time timestamp,
+    d_co int,
+    pt08 int,
+    nmhc int,
+    c6h6 int,
+    pto8 int,
+    nox int,
+    pt08_s3 int,
+    no2 int,
+    pt08_s4 int,
+    pt05_s5 int,
+    t int,
+    rh int,
+    ah int
+    )
+    row format delimited
+    fields terminated by ';';
+    ```
+    
+    
+    
+    
+    create table location
+    ```bash
+    ```
+    try to place a data into table location
+    ```bash
+    load data local inpath 'file:///config/workspace/locations.csv' into table location;
+     ```
+     Perform a select operation . 
+    ```bash
+     select * from location;
+    ```
+    Fetch the result of the select operation in your local as a csv file .
+    ```bash
+    hadoop fs -cat /user/hive/warehouse/location/locations.csv > /config/workspace/sample.csv
+    ```
+    Perform group by operation . 
+    ```bash
+    select city from location group by city;
+    ```
+Perform filter operation at least 5 kinds of filter examples . 
+```bash
+select * from location where city='MAHARASHTRA';
+select * from location;
+select * from location order by city ;
+    select * from location where id%2=0;
+    select * from location where id%2!=0;
+```
+
+alter table operation 
+```alter table location rename to locations;
+ ```
+drop table operation
+```bash
+drop table locations;
+```
+order by operation .
+```bash
+select * from location order by city ;
+```
+where clause operations you have to perform . 
+```bash
+ select * from location where id%2=0;
+ ```
+ sorting operation you have to perform . 
+```bash
+select * from location order by city ;
+```
+distinct operation you have to perform . 
+```bash
+select distinct(city) from locations;
+```
+like an operation you have to perform . 
+```bash
+SELECT * FROM location
+WHERE city LIKE 'a%';
+```
+union operation you have to perform . 
+```bash
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+```
+table view operation you have to perform . 
+```bash
+create view location_view as select * from locations where id%2=0;
+```
 
 
 
