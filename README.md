@@ -11,7 +11,7 @@ fields terminated by ',';
 ```
 
 
-# Load data into the hdfs of table
+# Load data into the hive table from local machine
 ```bash
 load data local inpath 'file:///config/workspace/sales_data_raw.csv' into table sales_data;
 select * from sales_data;
